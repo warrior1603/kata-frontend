@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>Kata Transformation</h1>
+    <p>Entrez un nombre pour le transformer selon les règles du kata.</p>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kataModal">
+      Tester l'API
+    </button>
+  
+    <!-- Modal -->
+    <div class="modal fade" id="kataModal" tabindex="-1" aria-labelledby="kataModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="kataModalLabel">Tester l'API</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <label for="numberInput" class="form-label">Nombre</label>
+                <input type="number" class="form-control" id="numberInput" [(ngModel)]="number" name="number" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Transformer</button>
+            </form>
+            <div *ngIf="result !== null" class="mt-3">
+              <h5>Résultat:</h5>
+              <p>{{ result }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
